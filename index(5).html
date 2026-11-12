@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f172a">
+<title>Workshop-Demo | MVG V8 Datenschutz – freiwillige Gesprächsvorbereitung</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--text:#182033;--muted:#6b7280;--line:#dce4ec;--accent:#1f4e79;--accent2:#2c6aa0;--soft:#eaf2f8;--good:#1f7a4d;--warn:#9b6b11;--shadow:0 10px 30px rgba(15,23,42,.08);--radius:20px}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,#eef4f9 0%,var(--bg) 42%);color:var(--text);min-height:100vh}button,input,textarea{font:inherit}.wrap{max-width:920px;margin:auto;padding:24px 16px 56px}.brand{display:flex;gap:12px;align-items:center;margin-bottom:18px}.brand-badge{width:46px;height:46px;border-radius:14px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800}.brand-title{font-weight:800}.card{background:var(--card);border:1px solid rgba(15,23,42,.06);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}h1{font-size:clamp(1.8rem,4vw,2.85rem);line-height:1.08;margin:0 0 14px}h2{font-size:1.45rem;margin:0 0 10px}h3{font-size:1rem;margin:0 0 8px}p{line-height:1.55}.lead{font-size:1.08rem;color:#344054;max-width:740px}.muted{color:var(--muted);font-size:.93rem}.pill{display:inline-flex;align-items:center;gap:8px;background:var(--soft);color:var(--accent);border-radius:999px;padding:8px 12px;font-size:.9rem;font-weight:700}.btn{border:0;border-radius:14px;padding:14px 18px;cursor:pointer;font-weight:800;transition:.15s transform,.15s opacity}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(31,78,121,.22)}.btn-secondary{background:#eef2f6;color:#27364a}.btn-outline{background:#fff;border:1px solid var(--line);color:#27364a}.btn-green{background:var(--good);color:#fff}.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.hidden{display:none!important}.grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px}.box{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.privacy{margin-top:16px;padding:13px 15px;border:1px solid var(--line);background:#f8fafc;border-radius:12px;color:#475467;font-size:.9rem}.question-meta{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.9rem}.progress-shell{height:10px;background:#e7edf3;border-radius:999px;overflow:hidden;margin:14px 0 8px}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .2s}.question-box{margin-top:22px}.question-title{font-size:1.35rem;font-weight:800;margin-bottom:8px}.question-help{color:var(--muted);margin-bottom:16px}.chips{display:flex;flex-wrap:wrap;gap:10px}.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;cursor:pointer;font-weight:700;color:#344054}.chip.selected{background:var(--accent);border-color:var(--accent);color:#fff}.options{display:grid;grid-template-columns:1fr;gap:10px}.opt{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;cursor:pointer;display:flex;align-items:flex-start;gap:12px}.opt.selected{border-color:var(--accent);background:var(--soft)}.opt input{margin-top:3px;accent-color:var(--accent)}.scale-wrap{padding:10px 0 2px}input[type=range]{width:100%;accent-color:var(--accent)}.scale-labels{display:flex;justify-content:space-between;gap:18px;color:var(--muted);font-size:.88rem;margin-top:8px}textarea{width:100%;min-height:120px;padding:14px;border:1px solid var(--line);border-radius:14px;resize:vertical}.counter{text-align:right;color:var(--muted);font-size:.84rem;margin-top:6px}.result-header{display:grid;grid-template-columns:1fr;gap:18px}.result-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px}.tags{display:flex;gap:8px;flex-wrap:wrap}.tag{background:var(--soft);color:var(--accent);padding:8px 10px;border-radius:999px;font-weight:700;font-size:.9rem}.profile-bars{display:grid;gap:13px;margin-top:14px}.profile-row{display:grid;grid-template-columns:minmax(120px,1.5fr) 3fr 42px;gap:10px;align-items:center}.profile-label{font-size:.88rem;color:#344054;font-weight:700}.profile-track{height:12px;background:#e9eef3;border-radius:999px;overflow:hidden}.profile-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:999px}.profile-value{text-align:right;font-size:.84rem;color:var(--muted);font-weight:800}.interest-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #edf0f3;padding:8px 0}.interest-row:last-child{border-bottom:0}.status{font-weight:800}.status.yes{color:var(--good)}.status.maybe{color:var(--warn)}.status.no{color:var(--muted)}.export-panel{margin-top:20px;padding:18px;border:1px solid var(--line);border-radius:16px;background:#f8fafc}.export-grid{display:grid;grid-template-columns:1fr;gap:12px}.field label{display:block;font-size:.86rem;font-weight:700;margin-bottom:6px}.field input{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff}.note{font-size:.84rem;color:var(--muted);line-height:1.5}.footer-note{font-size:.82rem;color:var(--muted);margin-top:18px;line-height:1.5}.outlook-note{margin-top:10px;padding:10px 12px;background:#fff8e7;border:1px solid #ead8a7;border-radius:10px;font-size:.84rem;color:#6f5210}.section-title{margin:20px 0 8px;font-weight:800;color:var(--accent)}
+@media(min-width:760px){.card{padding:34px}.grid.two,.options.two,.result-grid,.export-grid{grid-template-columns:1fr 1fr}.result-header{grid-template-columns:1.05fr .95fr}}
+@media(max-width:520px){.profile-row{grid-template-columns:1fr 42px}.profile-track{grid-column:1/-1;grid-row:2}}
+@media print{@page{size:A4;margin:12mm}body{background:#fff}.no-print,.brand{display:none!important}.wrap{max-width:none;padding:0}.card{box-shadow:none;border:0;padding:0}.box{break-inside:avoid;page-break-inside:avoid}.profile-fill,.tag,.pill{-webkit-print-color-adjust:exact;print-color-adjust:exact}#resultView{display:block!important}}
+.profile-summary{display:grid;gap:12px;margin-top:14px}.profile-summary-item{padding-bottom:10px;border-bottom:1px solid #e7edf3}.profile-summary-item:last-child{border:0;padding-bottom:0}.profile-summary-item strong{display:block;color:#1f4e79;margin-bottom:4px}.profile-summary-item p{margin:0;line-height:1.5;font-size:.94rem}@media print{.profile-summary-item{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="brand"><div class="brand-badge">MVG</div><div><div class="brand-title">Mitarbeiter-Vorgesetzten-Gespräch</div><div class="muted">Workshop-Demoversion · keine dienstliche Nutzung</div></div></div>
+
+<section id="startView" class="card">
+<span class="pill">WORKSHOP-DEMO · ca. 3 Minuten</span>
+<h1>Meine dienstliche Gebrauchsanweisung</h1>
+<p class="lead">Eine kurze freiwillige Vorbereitung auf das Mitarbeiter-Vorgesetzten-Gespräch: Stärken, Arbeitsweise, Motivation, Führungsbedürfnisse und berufliche Interessen.</p>
+<div class="grid two">
+<div class="box"><h3>Ergebnis für dich</h3><p>Du erhältst eine kompakte Auswertung direkt im Browser.</p></div>
+<div class="box"><h3>Daten für das MVG</h3><p>Im Workshop wird nur die Darstellung der Ergebnisse ausprobiert. Eine Datenweitergabe ist deaktiviert.</p></div>
+</div>
+<div class="privacy"><strong>Öffentliche Workshop-Demo:</strong> Bitte ausschließlich erfundene Angaben eingeben. Keine Namen, personenbezogenen Dienstinformationen, Gesundheitsdaten oder Angaben über Kollegen eingeben. Die Antworten werden nur im geöffneten Browser verarbeitet; eine Übermittlung durch diese Anwendung ist nicht vorgesehen. GitHub Pages kann beim Seitenaufruf technische Zugriffsdaten verarbeiten. Export und E-Mail-Funktionen sind in dieser Demo deaktiviert.</div><div class="btn-row"><button class="btn btn-primary" id="startBtn">Fragebogen starten</button></div>
+<div class="box hidden" style="margin-top:24px;background:#f8fafc"><h3>Du möchtest derzeit kein MVG führen?</h3><p class="muted">Die Teilnahme ist freiwillig. Du kannst auf das Gespräch und die Befragung verzichten und deinen Vorgesetzten darüber informieren.</p><button class="btn btn-outline" id="declineBtn">Auf das MVG verzichten</button><div id="declinePanel" class="hidden" style="margin-top:16px"><p>Bitte prüfe die vorbereitete Nachricht, bevor du sie in Outlook selbst versendest. Es werden keine Befragungsdaten erzeugt.</p><div class="field"><label for="declineRecipient">E-Mail-Adresse des Vorgesetzten (optional)</label><input id="declineRecipient" type="email" placeholder="vorgesetzter@dienststelle.de"></div><div class="field" style="margin-top:10px"><label for="declineName">Dein Name (optional)</label><input id="declineName" placeholder="Vorname Nachname"></div><div class="btn-row"><button class="btn btn-primary" id="declineMailBtn">E-Mail in Outlook vorbereiten</button><button class="btn btn-secondary" id="declineCancelBtn">Abbrechen</button></div><div id="declineFallback" class="hidden outlook-note"><p>Falls sich Outlook nicht öffnet, kopiere diesen Text in eine neue E-Mail:</p><textarea id="declineText" readonly></textarea></div></div></div>
+</section>
+
+<section id="quizView" class="card hidden">
+<div class="question-meta"><span id="qCount">Frage 1 von 12</span><span>ca. 3 Minuten</span></div>
+<div class="progress-shell"><div class="progress-bar" id="progressBar"></div></div>
+<div id="questionHost" class="question-box"></div>
+<div class="btn-row"><button class="btn btn-secondary" id="backBtn">Zurück</button><button class="btn btn-primary" id="nextBtn">Weiter</button></div>
+</section>
+
+<section id="resultView" class="card hidden">
+<div class="btn-row no-print" style="margin-top:0"><button class="btn btn-secondary" id="restartBtn">Neu starten</button></div>
+<div id="pdfArea">
+<div class="result-header">
+<div><span class="pill">Selbsteinschätzung</span><h1 style="margin-top:12px">Meine dienstliche Gebrauchsanweisung</h1><p class="muted">Freiwillige Vorbereitung auf das Mitarbeiter-Vorgesetzten-Gespräch.</p></div>
+<div class="box"><h3>Mein persönliches Arbeitsprofil</h3><p class="muted">Zusammenfassung meiner Angaben – ohne Punkte oder Prozentwerte.</p><div id="profileChart" class="profile-summary"></div></div>
+</div>
+<div class="result-grid">
+<div class="box"><h3>Meine Stärken</h3><div class="tags" id="strengthTags"></div></div>
+<div class="box"><h3>So arbeite ich am besten</h3><p id="workText"></p></div>
+<div class="box"><h3>So sollte man mich führen</h3><p id="leadershipText"></p></div>
+<div class="box"><h3>Das motiviert mich</h3><p id="motivationText"></p></div>
+<div class="box"><h3>Darauf sollte man bei mir achten</h3><p id="energyText"></p></div>
+<div class="box"><h3>So arbeite ich mit anderen</h3><p id="teamText"></p></div>
+<div class="box"><h3>Berufliche Interessen / Verwendung</h3><div id="interestList"></div></div>
+<div class="box"><h3>Berufliche Entwicklung</h3><p id="developmentText"></p></div>
+<div class="box" style="grid-column:1/-1"><h3>Das möchte ich im Gespräch ansprechen</h3><p id="talkText"></p></div><div class="box" style="grid-column:1/-1"><h3>Meine Fragen an den Vorgesetzten</h3><div id="personalQuestions"></div></div><div class="box" style="grid-column:1/-1"><h3>Weitere Gesprächsanregungen aus dem Thüringer MVG-Leitfaden</h3><div id="officialQuestions"></div></div>
+<div class="box hidden" style="grid-column:1/-1" id="freeTextCard"><h3>Eigene Ergänzung</h3><p id="freeTextResult"></p></div>
+</div>
+<p class="footer-note"><strong>WORKSHOP-DEMO:</strong> Keine echten Angaben verwenden. Ergebnisse werden nicht gespeichert oder übermittelt. Diese Auswertung beruht ausschließlich auf der eigenen Selbsteinschätzung. Sie dient als freiwillige Gesprächsvorbereitung und stellt keine psychologische Diagnostik, Eignungsfeststellung oder dienstliche Beurteilung dar.</p>
+</div>
+
+<div class="export-panel no-print hidden">
+<h2>Auswertung & freiwillige Übergabe</h2>
+<div class="export-grid">
+<div class="field"><label for="employeeName">Name (optional)</label><input id="employeeName" placeholder="z. B. Max Mustermann"></div>
+<div class="field"><label for="recipient">E-Mail des Vorgesetzten (optional)</label><input id="recipient" type="email" placeholder="z. B. vorgesetzter@dienststelle.de"></div>
+</div>
+<div class="btn-row">
+<button class="btn btn-primary" id="pdfBtn">PDF herunterladen</button>
+<button class="btn btn-outline" id="jsonBtn">JSON-Datei herunterladen</button>
+<button class="btn btn-green" id="outlookBtn">Outlook-Nachricht ohne Daten vorbereiten</button>
+</div>
+<div class="outlook-note"><strong>Sicherer Übergabeweg:</strong> Die E-Mail enthält <strong>keine</strong> Antworten oder JSON-Daten. Wenn du Daten übergeben möchtest, lade die JSON-Datei herunter, prüfe sie und füge sie <strong>nur bei dienstlich zugelassenem Übertragungsweg</strong> manuell als Anhang hinzu. Der Vorgesetzte kann die JSON-Datei im bestehenden Vorgesetztenmodul importieren. Eine Weitergabe ist freiwillig. <strong>PDF und JSON sind vertraulich</strong>; sichere und lösche die Dateien nach den Vorgaben deiner Dienststelle.</div>
+<div class="box" style="margin-top:12px;background:#fff"><label style="display:flex;gap:10px;align-items:flex-start"><input id="shareConfirm" type="checkbox" style="margin-top:5px"><span>Ich habe verstanden, dass eine Datenweitergabe freiwillig ist und ich einen <strong>dienstlich zugelassenen</strong> Übertragungsweg verwenden muss. Die Datei wird nicht automatisch angehängt oder versendet.</span></label></div>
+<div class="outlook-note"><strong>Datensparsamkeit:</strong> Vor dem JSON-Export kannst du optionale Freitextantworten aus der <em>Weitergabedatei</em> ausschließen. Deine persönliche PDF bleibt davon unberührt.</div>
+<div class="box" style="margin-top:10px"><label style="display:flex;gap:10px;align-items:center"><input id="omitFree" type="checkbox" checked> Freitextantworten nicht in die JSON-Weitergabedatei aufnehmen</label><p class="note">Betrifft die Felder Feedback, weitere Angaben und freie Ergänzung. Die übrigen Antworten werden weiterhin exportiert.</p></div>
+</div>
+</section>
+</main>
+
+<script>
+const questions=[
+{id:'strengths',type:'multi',max:3,title:'Was beschreibt dich im Dienst besonders gut?',help:'Wähle bis zu 3 Stärken.',options:['Analytisch','Kommunikativ','Zuverlässig','Teamorientiert','Belastbar','Empathisch','Entscheidungsfreudig','Organisiert','Kreativ','Ausdauernd','Verantwortungsbewusst','Ruhig']},
+{id:'structure',type:'range',title:'Wie arbeitest du am besten?',help:'Ziehe den Regler dorthin, was eher zu dir passt.',left:'Klare Vorgaben',right:'Viel eigener Spielraum',default:50},
+{id:'team',type:'range',title:'Wie arbeitest du bei Aufgaben lieber?',left:'Eher eigenständig',right:'Eng im Team',default:50},
+{id:'variety',type:'range',title:'Wie sieht dein idealer Arbeitsalltag aus?',left:'Planbar & strukturiert',right:'Abwechslungsreich & spontan',default:50},
+{id:'feedback',type:'single',title:'Wenn etwas nicht gut läuft, wie möchtest du angesprochen werden?',options:['Direkt und klar','Ruhig unter vier Augen','Erst etwas Zeit zum Nachdenken','Gemeinsam lösungsorientiert']},
+{id:'leadership',type:'multi',max:2,title:'Was hilft dir von deiner Führungskraft am meisten?',help:'Wähle maximal 2 Punkte.',options:['Klare Ziele','Freiraum und Vertrauen','Regelmäßiges Feedback','Unterstützung bei Problemen','Anerkennung','Fachlicher Austausch','Klare Entscheidungen','Entwicklungsmöglichkeiten']},
+{id:'drainers',type:'multi',max:2,title:'Was kostet dich im Dienst besonders viel Energie?',help:'Wähle maximal 2 Punkte.',options:['Dauernde Unterbrechungen','Unklare Zuständigkeiten','Konflikte','Monotone Aufgaben','Zeitdruck','Fehlende Entscheidungen','Wenig Handlungsspielraum','Zu wenig Austausch','Nichts davon besonders']},
+{id:'tasks',type:'multi',max:3,title:'Welche Tätigkeiten machen dir grundsätzlich Spaß?',help:'Wähle bis zu 3.',options:['Unmittelbares Einsatzgeschehen','Sachverhalte aufnehmen und lösen','Ermittlungen','Verkehr','Bürgerkontakt','Prävention','Organisation und Planung','Facharbeit','Kollegen unterstützen oder anleiten','Führung','Projekte und Weiterentwicklung']},
+{id:'areas',type:'areas',title:'Welche Bereiche oder Verwendungen interessieren dich künftig?',help:'Wähle für jeden Bereich spontan: Interesse, vielleicht oder aktuell nicht.',areas:['Einsatz-/Streifendienst','Ermittlungsdienst','Verkehr','Kontaktbereichsdienst','Sachbereich Einsatz','Zentraler Dienst','Andere polizeiliche Verwendung / andere Organisationseinheit']},
+{id:'development',type:'multi',max:3,title:'Wie möchtest du dich beruflich weiterentwickeln?',help:'Wähle bis zu 3 Punkte, die aktuell zu dir passen.',options:['Im bisherigen Bereich fachlich tiefer einsteigen','Einen anderen Aufgabenbereich kennenlernen','Mehr Verantwortung übernehmen','Perspektivisch Führungsverantwortung übernehmen','Aufstieg in den gehobenen Dienst interessiert mich','Aufstieg in den höheren Dienst interessiert mich','Aktuell keine Veränderung gewünscht','Noch unklar / ich wünsche Beratung']},
+{id:'colleagues',type:'multi',max:2,title:'Was sollten Kollegen über dich wissen?',help:'Wähle maximal 2 Aussagen.',options:['Ich brauche klare Absprachen.','Ich spreche Probleme lieber direkt an.','Ich brauche manchmal erst Zeit zum Nachdenken.','Ich helfe gern, möchte aber auch selbstständig arbeiten.','Ich arbeite besonders gern gemeinsam an Lösungen.','Ich übernehme gern Verantwortung.']},
+{id:'expectations',type:'multi',max:3,title:'Was erwartest du von deiner Dienststelle?',help:'Was ist dir wichtig, damit du deine Arbeit gut und gerne erledigen kannst? Wähle bis zu 3 Punkte.',options:['Klare Entscheidungen und nachvollziehbare Vorgaben','Faire und transparente Behandlung','Wertschätzung und Anerkennung','Offene Kommunikation und rechtzeitige Informationen','Verlässliche Dienstplanung und Rücksicht auf private Belange','Angemessene Personal- und Sachausstattung','Unterstützung bei Problemen und Belastungen','Fortbildung und berufliche Entwicklung','Eigenverantwortliches Arbeiten und Vertrauen','Gutes Arbeitsklima und Zusammenhalt','Konstruktiver Umgang mit Fehlern und Kritik','Beteiligung bei Entscheidungen im eigenen Arbeitsbereich']},
+{id:'free',type:'text',title:'Gibt es noch etwas, das deine Führungskraft über dich wissen sollte?',help:'Optional - ein kurzer Satz reicht.',maxLength:250}
+];
+const state={}; let current=0;
+const $=id=>document.getElementById(id); const startView=$('startView'),quizView=$('quizView'),resultView=$('resultView'),questionHost=$('questionHost');
+$('declineBtn').onclick=()=>{ $('declinePanel').classList.remove('hidden');$('declineBtn').disabled=true;};
+$('declineCancelBtn').onclick=()=>{$('declinePanel').classList.add('hidden');$('declineBtn').disabled=false;};
+$('declineMailBtn').onclick=()=>alert('In der Workshop-Demo ist die E-Mail-Funktion deaktiviert.');
+$('startBtn').onclick=()=>{startView.classList.add('hidden');quizView.classList.remove('hidden');renderQuestion()};
+$('restartBtn').onclick=()=>{Object.keys(state).forEach(k=>delete state[k]);current=0;resultView.classList.add('hidden');startView.classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})};
+$('backBtn').onclick=()=>{if(current>0){current--;renderQuestion()}};
+$('nextBtn').onclick=()=>{if(!validateCurrent())return;if(current<questions.length-1){current++;renderQuestion()}else showResults()};
+function escapeAttr(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function renderQuestion(){const q=questions[current];$('qCount').textContent=`Frage ${current+1} von ${questions.length}`;$('progressBar').style.width=`${((current+1)/questions.length)*100}%`;$('backBtn').style.visibility=current===0?'hidden':'visible';$('nextBtn').textContent=current===questions.length-1?'Auswertung erstellen':'Weiter';let h=`<div class="question-title">${q.title}</div>`;if(q.help)h+=`<div class="question-help">${q.help}</div>`;
+if(q.type==='multi'){const sel=state[q.id]||[];h+=`<div class="chips">${q.options.map(o=>`<button type="button" class="chip ${sel.includes(o)?'selected':''}" data-opt="${escapeAttr(o)}">${o}</button>`).join('')}</div>`}
+if(q.type==='single'){const v=state[q.id]||'';h+=`<div class="options two">${q.options.map(o=>`<label class="opt ${v===o?'selected':''}"><input type="radio" name="${q.id}" value="${escapeAttr(o)}" ${v===o?'checked':''}><span>${o}</span></label>`).join('')}</div>`}
+if(q.type==='range'){const v=state[q.id]??q.default;h+=`<div class="scale-wrap"><input id="rangeInput" type="range" min="0" max="100" step="1" value="${v}"><div class="scale-labels"><span>${q.left}</span><span>${q.right}</span></div></div>`}
+if(q.type==='areas'){const a=state[q.id]||{};h+=`<div class="options">${q.areas.map(area=>{const v=a[area]||'maybe';const other=area.startsWith('Andere polizeiliche Verwendung');return `<div class="box"><div style="font-weight:800;margin-bottom:10px">${area}</div><div class="chips"><button class="chip area-chip ${v==='yes'?'selected':''}" data-area="${escapeAttr(area)}" data-val="yes">Interesse</button><button class="chip area-chip ${v==='maybe'?'selected':''}" data-area="${escapeAttr(area)}" data-val="maybe">Vielleicht</button><button class="chip area-chip ${v==='no'?'selected':''}" data-area="${escapeAttr(area)}" data-val="no">Aktuell nicht</button></div>${other?`<input id="areaOther" type="text" maxlength="100" placeholder="z. B. Kriminalpolizei, Bereitschaftspolizei, Diensthundewesen ..." value="${escapeAttr(state.areaOther||'')}" style="width:100%;margin-top:12px;padding:12px;border:1px solid #cbd5e1;border-radius:10px;font:inherit">`:''}</div>`}).join('')}</div>`}
+if(q.type==='text'){const v=state[q.id]||'';h+=`<textarea id="freeText" maxlength="${q.maxLength}" placeholder="Optional...">${v}</textarea><div class="counter"><span id="charCount">${v.length}</span> / ${q.maxLength}</div>`}
+h+=`<div style="margin-top:22px;text-align:right"><button type="button" id="skipQuestion" style="border:0;background:transparent;color:#64748b;text-decoration:underline;cursor:pointer;padding:9px">Frage überspringen</button></div>`;questionHost.innerHTML=h;bindEvents(q);$('skipQuestion').onclick=()=>{state[q.id]=null;if(q.type==='areas')state.areaOther='';if(current<questions.length-1){current++;renderQuestion()}else showResults()};window.scrollTo({top:0,behavior:'smooth'})}
+function bindEvents(q){if(q.type==='multi')questionHost.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{const o=b.dataset.opt,arr=state[q.id]?[...state[q.id]]:[],i=arr.indexOf(o);if(i>=0)arr.splice(i,1);else if(arr.length<q.max)arr.push(o);state[q.id]=arr;renderQuestion()});
+if(q.type==='single')questionHost.querySelectorAll('input[type=radio]').forEach(r=>r.onchange=()=>{state[q.id]=r.value;questionHost.querySelectorAll('.opt').forEach(x=>x.classList.remove('selected'));r.closest('.opt').classList.add('selected')});
+if(q.type==='range'){const i=$('rangeInput');if(state[q.id]===undefined)state[q.id]=Number(i.value);i.oninput=()=>state[q.id]=Number(i.value)}
+if(q.type==='areas'){if(state[q.id]===undefined){state[q.id]={};q.areas.forEach(a=>state[q.id][a]='maybe')}questionHost.querySelectorAll('.area-chip').forEach(b=>b.onclick=()=>{state[q.id][b.dataset.area]=b.dataset.val;renderQuestion()});const ao=$('areaOther');if(ao)ao.oninput=()=>state.areaOther=ao.value}
+if(q.type==='text'){const t=$('freeText'),c=$('charCount');t.oninput=()=>{state[q.id]=t.value;c.textContent=t.value.length}}}
+function validateCurrent(){const q=questions[current];if(['text','range','areas'].includes(q.type))return true;const v=state[q.id];if((q.type==='multi'&&(!v||!v.length))||(q.type==='single'&&!v)){alert('Bitte wähle eine Antwort aus.');return false}return true}
+function showResults(){quizView.classList.add('hidden');resultView.classList.remove('hidden');buildResults();renderQuestionLists();window.scrollTo({top:0,behavior:'smooth'})}
+function buildResults(){const strengths=state.strengths||[];$('strengthTags').innerHTML=strengths.map(x=>`<span class="tag">${x}</span>`).join('');const structure=state.structure??50,team=state.team??50,variety=state.variety??50;const wp=[];if(state.structure!==null&&state.structure!==undefined)wp.push(structure<35?'Ich arbeite besonders gut mit klaren Vorgaben und eindeutigen Rahmenbedingungen.':structure>65?'Ich arbeite besonders gut mit eigenem Gestaltungsspielraum und Vertrauen.':'Ich schätze klare Ziele, möchte innerhalb dieses Rahmens aber eigenständig arbeiten.');if(state.team!==null&&state.team!==undefined)wp.push(team<35?'Bei Aufgaben arbeite ich gern eigenständig.':team>65?'Bei Aufgaben suche ich bewusst die enge Zusammenarbeit im Team.':'Ich kann sowohl eigenständig als auch gemeinsam im Team gut arbeiten.');if(state.variety!==null&&state.variety!==undefined)wp.push(variety<35?'Ein planbarer und strukturierter Arbeitsalltag liegt mir.':variety>65?'Abwechslung und wechselnde Situationen motivieren mich.':'Ich mag eine Mischung aus Struktur und Abwechslung.');$('workText').textContent=wp.join(' ')||'Keine Angabe.';
+const lead=state.leadership||[],feedback=state.feedback||'';$('leadershipText').textContent=(lead.length?`Besonders hilfreich sind für mich: ${lead.join(' und ')}. `:'')+(feedback?`Wenn etwas nicht gut läuft, wünsche ich mir: ${feedback.toLowerCase()}.`:'');const tasks=state.tasks||[];$('motivationText').textContent=tasks.length?`Mich motivieren besonders: ${tasks.join(', ')}.`:'Keine Angabe.';const dr=state.drainers||[];$('energyText').textContent=dr.includes('Nichts davon besonders')?'Von den genannten Punkten empfinde ich aktuell keinen als besonderen Energieräuber.':dr.length?`Besonders viel Energie kosten mich: ${dr.join(', ')}.`:'Keine Angabe.';$('teamText').textContent=(state.colleagues||[]).join(' ')||'Keine Angabe.';
+const areas=state.areas||{},labels={yes:'Interesse',maybe:'Vielleicht',no:'Aktuell nicht'},classes={yes:'yes',maybe:'maybe',no:'no'};$('interestList').innerHTML=Object.entries(areas).map(([n,v])=>`<div class="interest-row"><span>${n.startsWith('Andere polizeiliche Verwendung')&&state.areaOther?n+': '+state.areaOther:n}</span><span class="status ${classes[v]}">${labels[v]}</span></div>`).join('');const dev=state.development||[];$('developmentText').textContent=dev.length?dev.join('; ')+'.':'Keine Angabe.';
+const yesAreas=Object.entries(areas).filter(([,v])=>v==='yes').map(([k])=>k);let talk='';if(yesAreas.length)talk=`Welche Möglichkeiten gibt es für mich, künftig Einblicke oder Entwicklungsmöglichkeiten im Bereich ${yesAreas.join(' / ')} zu bekommen?`;else if(dev.some(x=>x.includes('gehobenen Dienst')||x.includes('höheren Dienst')))talk='Welche Voraussetzungen und Entwicklungsschritte sind für den gewünschten Laufbahnaufstieg erforderlich?';else if(dev.includes('Mehr Verantwortung übernehmen'))talk='Welche Möglichkeiten gibt es für mich, schrittweise mehr Verantwortung zu übernehmen?';else if(dev.includes('Einen anderen Aufgabenbereich kennenlernen'))talk='Welche Möglichkeiten gibt es für mich, neue Aufgabenbereiche kennenzulernen?';else talk='Welche Entwicklungsmöglichkeiten passen aktuell zu meinen Stärken und Interessen?';$('talkText').textContent=talk;const free=(state.free||'').trim();$('freeTextCard').classList.toggle('hidden',!free);if(free)$('freeTextResult').textContent=free;
+const profileSections=[];
+const addProfile=(title,parts)=>{const text=parts.filter(Boolean).join(' ');if(text)profileSections.push({title,text})};
+const styleParts=[];
+if(state.structure!==null&&state.structure!==undefined)styleParts.push(structure<35?'Du bevorzugst klare Vorgaben und einen verlässlichen Rahmen.':structure>65?'Du bevorzugst eigenständiges Arbeiten mit Gestaltungsspielraum.':'Du schätzt klare Ziele und zugleich einen gewissen eigenen Gestaltungsspielraum.');
+if(state.team!==null&&state.team!==undefined)styleParts.push(team<35?'Bei der Aufgabenerledigung bevorzugst du eher selbstständiges Arbeiten.':team>65?'Bei der Aufgabenerledigung bevorzugst du enge Zusammenarbeit.':'Du bevorzugst je nach Aufgabe sowohl eigenständige Arbeit als auch Teamarbeit.');
+if(state.variety!==null&&state.variety!==undefined)styleParts.push(variety<35?'Du bevorzugst eher planbare, strukturierte Abläufe.':variety>65?'Du bevorzugst abwechslungsreiche Aufgaben und wechselnde Situationen.':'Du bevorzugst eine Mischung aus planbaren Abläufen und Abwechslung.');
+addProfile('Deine bevorzugte Arbeitsweise',styleParts);
+addProfile('Deine selbst benannten Stärken',strengths.length?[`Als Stärken hast du ${strengths.join(', ')} ausgewählt.`]:[]);
+addProfile('Was dir bei Führung und Rückmeldung wichtig ist',[(lead.length?`Du wünschst dir insbesondere ${lead.join(', ')}.`:''),(feedback?`Bei Rückmeldungen bevorzugst du: ${feedback}.`:'')]);
+addProfile('Deine Interessen und Entwicklung',[(tasks.length?`Diese Tätigkeiten interessieren dich: ${tasks.join(', ')}.`:''),(dev.length?`Als Entwicklungsperspektiven hast du ${dev.join(', ')} angegeben.`:'')]);
+addProfile('Was dir Energie kostet',dr.includes('Nichts davon besonders')?['Du hast keinen der genannten Punkte als besondere Belastung ausgewählt.']:dr.length?[`Du hast ${dr.join(', ')} als belastend angegeben.`]:[]);
+addProfile('Deine Erwartungen an die Dienststelle',(state.expectations||[]).length?[`Besonders wichtig sind dir: ${state.expectations.join(', ')}.`]:[]);
+const prompts=[];
+if(state.structure!==null&&state.structure!==undefined&&state.structure>65&&lead.some(x=>/klare|ziel|entscheidung/i.test(x)))prompts.push('Bei welchen Aufgaben wünschst du dir mehr Freiraum und wo klare Orientierung?');
+if(dr.length&&!dr.includes('Nichts davon besonders'))prompts.push('Welche konkrete Veränderung würde dir den Arbeitsalltag erleichtern?');
+if(dev.length)prompts.push('Welchen ersten Schritt möchtest du für deine berufliche Entwicklung besprechen?');
+if(!prompts.length&&profileSections.length)prompts.push('Welche deiner Angaben möchtest du im Mitarbeiter-Vorgesetzten-Gespräch vertiefen?');
+addProfile('Dein Gesprächsanstoß',prompts.slice(0,2));
+$('profileChart').innerHTML=profileSections.length?profileSections.map(p=>`<div class="profile-summary-item"><strong>${escapeProfileHtml(p.title)}</strong><p>${escapeProfileHtml(p.text)}</p></div>`).join(''):'<p>Du hast zu den betreffenden Themen keine Angaben gemacht. Deshalb wird kein Arbeitsprofil abgeleitet.</p>';
+state._profileSummary=profileSections;
+}
+function escapeProfileHtml(value){return String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
+
+function safeName(){const n=($('employeeName').value||'').trim();return (n||'MVG').replace(/[\\/:*?"<>|]+/g,'_').replace(/\s+/g,'_')}
+function dateStamp(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function downloadBlob(blob,name){const a=document.createElement('a');const u=URL.createObjectURL(blob);a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500)}
+function summaryRows(){const areas=state.areas||{};return [
+['strengths','Stärken',(state.strengths||[]).join('; ')],['structure','Arbeitsweise - Gestaltungsspielraum',String(state.structure??50)],['team','Teamorientierung',String(state.team??50)],['variety','Abwechslungsbedarf',String(state.variety??50)],['feedback','Gewünschte Rückmeldung',state.feedback||''],['leadership','Führungsbedürfnisse',(state.leadership||[]).join('; ')],['drainers','Energieräuber',(state.drainers||[]).join('; ')],['tasks','Interessante Tätigkeiten',(state.tasks||[]).join('; ')],['development','Berufliche Entwicklung',(state.development||[]).join('; ')],['colleagues','Zusammenarbeit',(state.colleagues||[]).join('; ')],['free','Eigene Ergänzung',state.free||''],...Object.entries(areas).map(([k,v])=>[`area:${k}`,`Verwendungsinteresse - ${k}`,v])
+]}
+
+/* Minimaler XLSX-Erzeuger - vollständig lokal, ohne externe Bibliotheken. */
+function crc32(bytes){let c=0xffffffff;for(const b of bytes){c^=b;for(let k=0;k<8;k++)c=(c>>>1)^((c&1)?0xedb88320:0)}return (c^0xffffffff)>>>0}
+function u16(n){return new Uint8Array([n&255,(n>>>8)&255])} function u32(n){return new Uint8Array([n&255,(n>>>8)&255,(n>>>16)&255,(n>>>24)&255])}
+function cat(arrs){const len=arrs.reduce((a,b)=>a+b.length,0),o=new Uint8Array(len);let p=0;for(const a of arrs){o.set(a,p);p+=a.length}return o}
+function zipStore(files){const enc=new TextEncoder(),locals=[],centrals=[];let off=0;for(const f of files){const name=enc.encode(f.name),data=typeof f.data==='string'?enc.encode(f.data):f.data,crc=crc32(data);const local=cat([u32(0x04034b50),u16(20),u16(0),u16(0),u16(0),u16(0),u32(crc),u32(data.length),u32(data.length),u16(name.length),u16(0),name,data]);locals.push(local);const central=cat([u32(0x02014b50),u16(20),u16(20),u16(0),u16(0),u16(0),u16(0),u32(crc),u32(data.length),u32(data.length),u16(name.length),u16(0),u16(0),u16(0),u16(0),u32(0),u32(off),name]);centrals.push(central);off+=local.length}const cd=cat(centrals),body=cat(locals),end=cat([u32(0x06054b50),u16(0),u16(0),u16(files.length),u16(files.length),u32(cd.length),u32(body.length),u16(0)]);return cat([body,cd,end])}
+function xmlEsc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function colName(n){let s='';while(n){n--;s=String.fromCharCode(65+n%26)+s;n=Math.floor(n/26)}return s}
+function sheetXml(rows){const rs=rows.map((row,ri)=>`<row r="${ri+1}">${row.map((v,ci)=>`<c r="${colName(ci+1)}${ri+1}" t="inlineStr"><is><t>${xmlEsc(v)}</t></is></c>`).join('')}</row>`).join('');return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><cols><col min="1" max="1" width="28" customWidth="1"/><col min="2" max="2" width="42" customWidth="1"/><col min="3" max="3" width="80" customWidth="1"/></cols><sheetData>${rs}</sheetData></worksheet>`}
+function buildXlsxBlob(){const profile={labels:[],values:[]};const overview=[['MVG - freiwillige Gesprächsvorbereitung','',dateStamp()],['Bereich','Ergebnis',''],['Stärken',(state.strengths||[]).join('; '),''],['Interessante Tätigkeiten',(state.tasks||[]).join('; '),''],['Berufliche Entwicklung',(state.development||[]).join('; '),''],['','', ''],['Arbeitsprofil','Wert in %',''],...profile.labels.map((l,i)=>[l,String(profile.values[i]),'']),['','', ''],['Verwendungsinteressen','Status',''],...Object.entries(state.areas||{}).map(([k,v])=>[k.startsWith('Andere polizeiliche Verwendung')&&state.areaOther?k+': '+state.areaOther:k,v==='yes'?'Interesse':v==='maybe'?'Vielleicht':'Aktuell nicht',''])];const raw=[['Feld-ID','Bezeichnung','Wert'],...summaryRows()];const files=[
+{name:'[Content_Types].xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/worksheets/sheet2.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/></Types>`},
+{name:'_rels/.rels',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`},
+{name:'xl/workbook.xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="Auswertung" sheetId="1" r:id="rId1"/><sheet name="Rohdaten" sheetId="2" r:id="rId2"/></sheets></workbook>`},
+{name:'xl/_rels/workbook.xml.rels',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet2.xml"/></Relationships>`},
+{name:'xl/worksheets/sheet1.xml',data:sheetXml(overview)},{name:'xl/worksheets/sheet2.xml',data:sheetXml(raw)}];return new Blob([zipStore(files)],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'})}
+
+const officialPrompts=[
+'Welche Aufgaben und Verantwortungsbereiche stehen für mich im kommenden Jahr im Mittelpunkt?',
+'Entsprechen meine tatsächlichen Aufgaben meinem Dienstposten und meiner verfügbaren Arbeitszeit?',
+'Welche Möglichkeiten gibt es, Abläufe und die Ausstattung meines Arbeitsplatzes zu verbessern?',
+'Wie kann ich meine Fähigkeiten gezielter einsetzen und welche Fortbildungen wären sinnvoll?',
+'Welche Ziele können wir gemeinsam vereinbaren und welche Unterstützung benötige ich dafür?',
+'Wie können wir Informationsfluss, gegenseitige Vertretung und Zusammenarbeit verbessern?',
+'Wie erlebst du unsere Zusammenarbeit und was wünschst du dir von mir?',
+'Wie können wir Entscheidungen, Rückmeldungen und Eigenverantwortung künftig gestalten?'
+];
+function personalPrompts(){const out=[];const add=(cond,q)=>{if(cond&&!out.includes(q))out.push(q)};
+add(state.structure!==null&&state.structure!==undefined&&state.structure>=65,'Bei welchen Aufgaben kann ich künftig mehr eigenständig entscheiden?');
+add(state.structure!==null&&state.structure!==undefined&&state.structure<=35,'Wie können wir Ziele, Zuständigkeiten und Erwartungen für meine Aufgaben klarer festlegen?');
+add((state.leadership||[]).includes('Regelmäßiges Feedback'),'Können wir regelmäßige, kurze Rückmeldungen zu meiner Arbeit vereinbaren?');
+add((state.leadership||[]).includes('Anerkennung'),'Woran erkenne ich, dass meine Arbeit deinen Erwartungen entspricht?');
+add((state.leadership||[]).includes('Entwicklungsmöglichkeiten'),'Welche konkreten Entwicklungsschritte hältst du für mich für möglich?');
+add((state.leadership||[]).includes('Unterstützung bei Problemen'),'Welche Unterstützung kann ich bei schwierigen Aufgaben konkret erwarten?');
+add((state.drainers||[]).includes('Zeitdruck'),'Wie können wir Aufgaben priorisieren und mit zeitlichen Engpässen umgehen?');
+add((state.drainers||[]).includes('Unklare Zuständigkeiten'),'Wie können wir Zuständigkeiten und Entscheidungswege klarer regeln?');
+add((state.drainers||[]).includes('Dauernde Unterbrechungen'),'Können wir Möglichkeiten für konzentrierte Arbeitsphasen schaffen?');
+add((state.drainers||[]).includes('Konflikte'),'Wie können wir Spannungen im Arbeitsumfeld frühzeitig und konstruktiv ansprechen?');
+add((state.drainers||[]).includes('Fehlende Entscheidungen'),'Wie können notwendige Entscheidungen künftig schneller getroffen werden?');
+add((state.expectations||[]).includes('Angemessene Personal- und Sachausstattung'),'Welche Verbesserungen bei Personal oder Ausstattung sind realistisch?');
+add((state.expectations||[]).includes('Verlässliche Dienstplanung und Rücksicht auf private Belange'),'Wie können wir Planbarkeit und dienstliche Anforderungen besser miteinander verbinden?');
+add((state.expectations||[]).includes('Beteiligung bei Entscheidungen im eigenen Arbeitsbereich'),'Bei welchen Entscheidungen kann ich stärker beteiligt werden?');
+add((state.development||[]).some(x=>/Aufstieg|Führungsverantwortung|Mehr Verantwortung/.test(x)),'Welche Voraussetzungen muss ich für meinen gewünschten nächsten Entwicklungsschritt erfüllen?');
+add(Object.values(state.areas||{}).some(v=>v==='yes'),'Welche Möglichkeiten gibt es, einen der von mir gewünschten Verwendungsbereiche kennenzulernen?');
+add((state.tasks||[]).length>0,'Wie kann ich meine bevorzugten Tätigkeiten und Stärken stärker in den Dienstalltag einbringen?');
+return out.slice(0,7)}
+function narrative(){const blocks=[];const add=t=>{if(t&&t.trim())blocks.push(t.trim())};const strengths=state.strengths||[];
+if(strengths.length)add('Zu meinen selbst benannten Stärken zählen '+strengths.join(', ')+'. Diese Eigenschaften möchte ich in meiner täglichen Arbeit bewusst einsetzen.');
+const work=[];if(state.structure!=null)work.push(state.structure<35?'Klare Vorgaben und verlässliche Rahmenbedingungen helfen mir besonders.':state.structure>65?'Ich schätze Vertrauen und Freiraum bei der Gestaltung meiner Aufgaben.':'Mir ist eine gute Mischung aus klaren Zielen und eigener Gestaltung wichtig.');if(state.team!=null)work.push(state.team<35?'Aufgaben bearbeite ich gern eigenständig.':state.team>65?'Der enge Austausch im Team liegt mir.':'Ich arbeite sowohl eigenständig als auch im Team gern.');if(state.variety!=null)work.push(state.variety<35?'Ein planbarer Arbeitsalltag kommt mir entgegen.':state.variety>65?'Abwechslungsreiche Aufgaben sprechen mich an.':'Ich wünsche mir eine Mischung aus planbaren und wechselnden Aufgaben.');if(work.length)add(work.join(' '));
+if((state.tasks||[]).length)add('Besonders gern beschäftige ich mich mit '+state.tasks.join(', ')+'.');
+if((state.leadership||[]).length||state.feedback)add('In der Zusammenarbeit mit meiner Führungskraft sind mir '+(state.leadership||[]).join(', ')+(state.feedback?((state.leadership||[]).length?' wichtig. Bei kritischen Rückmeldungen wünsche ich mir: ':'Bei kritischen Rückmeldungen wünsche ich mir: ')+state.feedback.toLowerCase()+'.': ' wichtig.'));
+if((state.drainers||[]).length&&!state.drainers.includes('Nichts davon besonders'))add('Als belastend empfinde ich nach meiner eigenen Einschätzung insbesondere '+state.drainers.join(', ')+'. Hierüber würde ich gern konstruktiv sprechen.');
+if((state.expectations||[]).length)add('Von meiner Dienststelle wünsche ich mir vor allem '+state.expectations.join(', ')+'.');
+if((state.development||[]).length)add('Für meine berufliche Entwicklung sind mir folgende Perspektiven wichtig: '+state.development.join(', ')+'.');
+const interests=Object.entries(state.areas||{}).filter(([,v])=>v==='yes').map(([k])=>k);if(interests.length)add('Darüber hinaus interessiere ich mich für mögliche Tätigkeiten in den Bereichen '+interests.join(', ')+'.');
+if((state.colleagues||[]).length)add('Für die Zusammenarbeit mit Kolleginnen und Kollegen beschreibe ich mich selbst so: '+state.colleagues.join(' '));
+if((state.free||'').trim())add('Ergänzend möchte ich festhalten: '+state.free.trim());
+return blocks}
+function renderQuestionLists(){const make=items=>{const ol=document.createElement('ol');ol.style.lineHeight='1.7';items.forEach(t=>{const li=document.createElement('li');li.textContent=t;li.style.marginBottom='8px';ol.appendChild(li)});return ol};$('personalQuestions').replaceChildren(make(personalPrompts()));$('officialQuestions').replaceChildren(make(officialPrompts));}
+function pdfHex(s){let out='';for(const ch of String(s).replace(/[–—]/g,'-').replace(/[“”„]/g,'"').replace(/’/g,"'")){const n=ch.charCodeAt(0);out+=(n>255?63:n).toString(16).padStart(2,'0')}return out}
+function wrapPdf(s,max=95){const words=String(s).split(/\s+/);const lines=[];let current='';for(const word of words){if(!word)continue;if((current+' '+word).trim().length>max){if(current)lines.push(current);current=word}else current=(current+' '+word).trim()}if(current)lines.push(current);return lines}
+function buildPdfBlob(){const pages=[];let commands=[],y=770;const dark='0.12 0.23 0.35',muted='0.38 0.45 0.52',blue='0.12 0.32 0.50';let page=0;
+function newPage(){if(commands.length)pages.push(commands.join('\n'));commands=[];page++;y=770;commands.push('0.96 0.97 0.98 rg 0 0 595 842 re f');commands.push('1 1 1 rg 32 38 531 764 re f');commands.push(`${blue} rg 32 796 531 6 re f`);commands.push(`BT /F1 8 Tf ${muted} rg 1 0 0 1 48 54 Tm <${pdfHex('MVG | Persönliche Gesprächsvorbereitung')}> Tj ET`);commands.push(`BT /F1 8 Tf ${muted} rg 1 0 0 1 514 54 Tm <${pdfHex(String(page))}> Tj ET`)}
+function line(t,size=11,bold=false,indent=0){const max=Math.floor((498-indent)/(size*.51));for(const piece of wrapPdf(t,Math.max(25,max))){if(y<95)newPage();commands.push(`BT /${bold?'F2':'F1'} ${size} Tf ${bold?blue:dark} rg 1 0 0 1 ${49+indent} ${y} Tm <${pdfHex(piece)}> Tj ET`);y-=size*1.55}}
+function space(n=12){y-=n;if(y<95)newPage()}
+function heading(t){if(y<175)newPage();space(17);line(t,14,true);space(6)}
+newPage();space(17);line('MEINE PERSPEKTIVE',10,true);space(7);line('Mein Arbeitsalltag.',23,true);line('Mein Gespräch.',23,true);space(9);line('Persönliche Vorbereitung auf das Mitarbeiter-Vorgesetzten-Gespräch',10);space(20);
+heading('01  Mein persönliches Arbeitsprofil');const blocks=narrative();if(blocks.length){for(const para of blocks){line(para,11);space(12)}}else line('Zu den persönlichen Arbeitsbedingungen liegen keine Angaben vor.');
+heading('02  Das möchte ich ansprechen');const questions=personalPrompts();if(questions.length)line('Aus meinen Antworten ergeben sich Themen, die ich bei Bedarf im Gespräch vertiefen möchte.');else line('Ich habe derzeit keine konkreten Gesprächsanliegen aus den Antworten abgeleitet.');
+heading('03  Meine Fragen an den Vorgesetzten');if(questions.length)questions.forEach((q,i)=>{line(`${i+1}. ${q}`,10.5);space(7)});else line('Aus den gemachten Angaben lassen sich derzeit keine spezifischen Fragen ableiten.');
+heading('04  Weitere mögliche Gesprächsfragen');line('Freiwillige Anregungen in Anlehnung an Anlage 1 des Thüringer MVG-Leitfadens (2018).',9);space(8);officialPrompts.forEach((q,i)=>{line(`${i+1}. ${q}`,10);space(6)});
+heading('Hinweis zur Verwendung');line('Diese Zusammenfassung gibt ausschließlich eigene Angaben wieder. Sie ist keine dienstliche Beurteilung, keine Eignungsfeststellung und keine psychologische Diagnostik. Eine Weitergabe erfolgt ausschließlich auf eigene Entscheidung.',9);pages.push(commands.join('\n'));
+const objs=[];objs[1]='<< /Type /Catalog /Pages 2 0 R >>';const pn=[],cn=[];let next=5;for(let i=0;i<pages.length;i++){pn.push(next++);cn.push(next++)}objs[2]=`<< /Type /Pages /Count ${pages.length} /Kids [${pn.map(n=>n+' 0 R').join(' ')}] >>`;objs[3]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>';objs[4]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>';for(let i=0;i<pages.length;i++){const content=pages[i];objs[pn[i]]=`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents ${cn[i]} 0 R >>`;objs[cn[i]]=`<< /Length ${content.length} >>\nstream\n${content}\nendstream`}
+let pdf='%PDF-1.4\n';const offsets=[0];for(let i=1;i<objs.length;i++){offsets[i]=pdf.length;pdf+=`${i} 0 obj\n${objs[i]}\nendobj\n`}const xref=pdf.length;pdf+=`xref\n0 ${objs.length}\n0000000000 65535 f \n`;for(let i=1;i<objs.length;i++)pdf+=String(offsets[i]).padStart(10,'0')+' 00000 n \n';pdf+=`trailer\n<< /Size ${objs.length} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`;return new Blob([new Uint8Array([...pdf].map(ch=>ch.charCodeAt(0)&255))],{type:'application/pdf'})}
+
+function jsonPayload(){
+  return {
+    schemaVersion:'2.1',
+    source:'MVG-Mitarbeiterwebsite',
+    createdAt:new Date().toISOString(),
+    employeeName:($('employeeName').value||'').trim(),
+    responses:{
+      strengths:[...(state.strengths||[])],
+      structure:state.structure===null?null:Number(state.structure??50),
+      team:state.team===null?null:Number(state.team??50),
+      variety:state.variety===null?null:Number(state.variety??50),
+      feedback:$('omitFree').checked?'':(state.feedback||''),
+      leadership:[...(state.leadership||[])],
+      drainers:[...(state.drainers||[])],
+      tasks:[...(state.tasks||[])],
+      areas:{...(state.areas||{})},
+      areaOther:$('omitFree').checked?'':(state.areaOther||''),
+      development:[...(state.development||[])],
+      colleagues:[...(state.colleagues||[])],
+      free:$('omitFree').checked?'':(state.free||''),
+      expectations:[...(state.expectations||[])],
+      skippedQuestions:questions.filter(q=>state[q.id]===null).map(q=>q.id)
+    }
+  };
+}
+function jsonText(pretty=true){return JSON.stringify(jsonPayload(),null,pretty?2:0)}
+function buildJsonBlob(){return new Blob([jsonText(true)],{type:'application/json;charset=utf-8'})}
+function mailBody(){
+  const name=($('employeeName').value||'').trim();
+  return `Guten Tag,\n\nich habe meine freiwillige Vorbereitung auf das Mitarbeiter-Vorgesetzten-Gespräch abgeschlossen.\n\nFalls ich meine Antworten übermitteln möchte, erfolgt dies gesondert über einen dafür dienstlich zugelassenen Weg. Diese E-Mail enthält keine Befragungsdaten.\n\nMit freundlichen Grüßen${name?'\n'+name:''}`;
+}
+function openOutlook(){
+  if(!$('shareConfirm').checked){alert('Bitte lies und bestätige zuerst den Hinweis zum zugelassenen Übertragungsweg.');return}
+  const recipient=($('recipient').value||'').trim();
+  const uri=`mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent('MVG – freiwillige Gesprächsvorbereitung')}&body=${encodeURIComponent(mailBody())}`;
+  window.location.href=uri;
+}
+$('pdfBtn').onclick=()=>alert('In der Workshop-Demo deaktiviert.');
+$('jsonBtn').onclick=()=>alert('In der Workshop-Demo deaktiviert.');
+$('outlookBtn').onclick=()=>alert('In der Workshop-Demo deaktiviert.');
+
+</script>
+</body>
+</html>
